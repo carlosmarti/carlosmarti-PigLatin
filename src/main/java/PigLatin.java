@@ -17,6 +17,19 @@ public class PigLatin {
      * @return the pig latin form of in.
      */
     public String returnPigLatin(String in){
-        return "";
+
+        char[] chList = in.toCharArray();
+        char temp = chList[0];
+
+        for(int i = 1; i < chList.length; i++){
+            chList[i - 1] = chList[i];
+        }
+
+        chList[chList.length - 1] = temp;
+
+        String newString = new String(chList);
+        newString = newString.concat("ay");
+
+        return newString;
     }
 }
